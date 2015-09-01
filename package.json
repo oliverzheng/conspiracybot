@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/oliverzheng/conspiracybot/issues"
   },
-  "homepage": "https://github.com/oliverzheng/conspiracybot#readme"
+  "homepage": "https://github.com/oliverzheng/conspiracybot#readme",
+  "dependencies": {
+    "random-js": "^1.0.4"
+  }
 }
