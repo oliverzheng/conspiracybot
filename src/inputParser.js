@@ -15,7 +15,7 @@ module.exports = function (input, callback) {
         if (words[i].tag == 'NNP' || words[i].tag == 'NNPS')
           properNouns.push(words[i].value);
         else if (words[i].tag == 'CD')
-          numbers.push(words[i].value);
+          numbers.push(parseInt(words[i].value));
       }
       callback(properNouns, numbers);
     });
