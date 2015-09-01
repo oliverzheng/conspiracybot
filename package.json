@@ -1,0 +1,23 @@
+{
+  "name": "conspiracybot",
+  "version": "1.0.0",
+  "description": "Half life 3 confirmed",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oliverzheng/conspiracybot.git"
+  },
+  "keywords": [
+    "conspiracy",
+    "bot"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oliverzheng/conspiracybot/issues"
+  },
+  "homepage": "https://github.com/oliverzheng/conspiracybot#readme"
+}
