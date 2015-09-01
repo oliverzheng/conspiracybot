@@ -11,8 +11,7 @@ module.exports = function (input, callback) {
       var words = result.words;
       var properNouns = [];
       var numbers =[];
-      console.log(words);
-      for(var i=0, length = words.length; i < length; i++) {
+      for (var i=0, length = words.length; i < length; i++) {
         if (words[i].tag == 'NNP' || words[i].tag == 'NNPS')
           properNouns.push(words[i].value);
         else if (words[i].tag == 'CD')
