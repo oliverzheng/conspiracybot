@@ -17,7 +17,7 @@ Given a blurb of text return any sentences that have numbers in them.
 */
 var findSentences = function(text){
 
-	var sentences = text.split('.');
+	var sentences = text.split('. ');
 	var ret = [];
 	for (var i = 0; i < sentences.length; i++) {
 		if (/\d/.test(sentences[i])){
