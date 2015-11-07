@@ -22,6 +22,7 @@
   "homepage": "https://github.com/oliverzheng/conspiracybot#readme",
   "dependencies": {
     "express": "^4.13.3",
+    "nodemw": "^0.7.4",
     "random-js": "^1.0.4"
   }
 }

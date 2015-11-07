@@ -11,13 +11,16 @@ module.exports = function (input, callback) {
       var words = result.words;
       var properNouns = [];
       var numbers =[];
+      var nouns = [];
       for (var i=0, length = words.length; i < length; i++) {
         if (words[i].tag == 'NNP' || words[i].tag == 'NNPS')
           properNouns.push(words[i].value);
         else if (words[i].tag == 'CD')
           numbers.push(parseInt(words[i].value));
+        else if (words[i].tag === 'NN' || words[i].tag === 'NNS')
+          nouns.push(words[i].value);
       }
-      callback(properNouns, numbers);
+      callback(properNouns, numbers, nouns);
     });
   }).on('error', function (error) {
     console.log("Request failed..." + error.message);
