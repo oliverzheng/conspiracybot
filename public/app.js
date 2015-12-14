@@ -60,6 +60,10 @@ var RootComponent = React.createClass({
     var facts = this.state.facts.map(function(fact) {
       return <li>{fact}</li>;
     });
+    var loaderStyle = {};
+    if (!this.state.isConspiring) {
+      loaderStyle.display = 'none';
+    }
     return (
       <div>
         <h1>Conspiracy Bot</h1>
@@ -77,6 +81,9 @@ var RootComponent = React.createClass({
         <button onClick={this._onClick} disabled={this.state.isConspiring}>
           Conspire
         </button>
+        <div className="loaderWrapper" style={loaderStyle}>
+          <div className="loader">Loading...</div>
+        </div>
         <ol>{facts}</ol>
       </div>
     );
