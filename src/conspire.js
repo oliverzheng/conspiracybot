@@ -56,7 +56,8 @@ function chooseNewWord(words, ignoreWords) {
   if (words.length === 0) {
     return null;
   }
-  return words[rand(0, words.length - 1)];
+  // tostring in case it's a number
+  return words[rand(0, words.length - 1)].toString();
 }
 
 function findNewFact(wordToCrawl, previousFacts, callback) {
