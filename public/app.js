@@ -4,6 +4,7 @@ var RootComponent = React.createClass({
       input: null,
       output: null,
       facts: [],
+      seedWords: [],
       isConspiring: false,
     };
   },
@@ -25,6 +26,7 @@ var RootComponent = React.createClass({
       input: input,
       output: output,
       facts: [input],
+      seedWords: [],
       isConspiring: true,
     }, function() {
       self._tryConspiring();
@@ -37,13 +39,15 @@ var RootComponent = React.createClass({
       'conspire',
       {
         previousFacts: this.state.facts,
-        input: this.state.input,
+        seedWords: this.state.seedWords,
         output: this.state.output,
       }
     ).done(function(res) {
       self.state.facts.push(res.newFact);
+      self.state.seedWords.push(res.newSeedWord);
       self.setState({
         facts: self.state.facts,
+        seedWords: self.state.seedWords,
       }, function() {
         if (!res.didConspire) {
           self._tryConspiring();

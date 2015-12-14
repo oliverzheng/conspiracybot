@@ -1,10 +1,6 @@
-var random = require('random-js');
+var rand = require('./rand');
 
 var CHANCE_OF_USING_PREV_NUMBER = 3; // 1 in 3
-
-function rand(a, b) {
-  return random.integer(a, b)(random.engines.nativeMath);
-}
 
 var operations = [
   function multiply(a, b) {

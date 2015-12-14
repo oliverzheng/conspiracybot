@@ -1,4 +1,6 @@
 var express = require('express');
+var conspire = require('./conspire');
+
 var app = express();
 
 app.use(express.static('public'));
@@ -6,15 +8,21 @@ app.use(express.static('public'));
 app.get('/conspire', function (req, res) {
   var query = req.query;
 
-  var previousFacts = query.previousFacts;
-  var input = query.input;
-  var output = query.output;
+  console.log('======');
 
-  res.send(
-    JSON.stringify({
-      newFact: 'herp derp',
-      didConspire: previousFacts.length >= 10,
-    })
+  conspire(
+    query.output,
+    query.previousFacts,
+    query.seedWords,
+    function(isFinished, newFact, newSeedWord) {
+      res.send(
+        JSON.stringify({
+          newFact: newFact,
+          newSeedWord: newSeedWord,
+          didConspire: isFinished,
+        })
+      );
+    }
   );
 });
 
